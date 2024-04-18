@@ -38,10 +38,10 @@ data "aws_ami" "ubuntu" {
 resource "aws_security_group" "web-sg" {
   name = "${random_pet.sg.id}-sg"
   ingress {
-    from_port   = 8080
-    to_port     = 8080
+    from_port   = 80
+    to_port     = 80
     protocol    = "tcp"
-    cidr_blocks = ["1.2.3.4/32"]
+    cidr_blocks = ["10.0.0.0/16"]
   }
 }
 
